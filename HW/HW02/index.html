@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Title</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="d_top">
+        학번: <span id="student_id">201933017</span> 이름: 
+        <span id="student_name">정영준</span>
+      </div>
+      <div class="d_left">
+        <button onclick="createCanvas()">버튼1</button>
+        <button onclick="displayGameInfo()">버튼2</button>
+      </div>
+      <div class="d_right">
+        <div class="d_right-text">빈화면</div>
+      </div>
+    </div>
+
+    <script>
+      function createCanvas() {
+        var canvas = document.createElement("canvas");
+        canvas.width = 200;
+        canvas.height = 200;
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        document.querySelector(".d_right").innerHTML = "";
+        document.querySelector(".d_right").appendChild(canvas);
+      }
+
+      function displayGameInfo() {
+        document.querySelector(".d_right").innerHTML = "";
+        var image = document.createElement("img");
+        image.src =
+          "https://media.licdn.com/dms/image/C4D0BAQF9Zr7H3KarQQ/company-logo_200_200/0/1636991293364/fm_co_logo?e=2147483647&v=beta&t=nbUcNtowVW7Hcb7eNAZSshRFu1HptMF3n0oa1ZPI458";
+        document.querySelector(".d_right").appendChild(image);
+
+        var infoList = document.createElement("ul");
+        var gameInfo = [
+          "좋아하는 게임: fm시리즈",
+          "출시년도: 2005~",
+          "장르: 시뮬레이션,시리즈",
+          "좋아하는 이유: 실제 인게임 플레이가 메인인 타 스포츠게임들과는 다르게 구단을 운영하는 플레이가 매력적이다.타 축구 시뮬레이션 게임과 비교했을 때도 볼륨이 압도적이다.플레이 시 선택지나 이벤트들이 현실적이어서 더 몰입감이 느껴진다.",
+        ];
+        gameInfo.forEach(function (item) {
+          var listItem = document.createElement("li");
+          listItem.textContent = item;
+          infoList.appendChild(listItem);
+        });
+        document.querySelector(".d_right").appendChild(infoList);
+      }
+    </script>
+  </body>
+</html>

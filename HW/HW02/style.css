@@ -1,0 +1,79 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+.container {
+  position: relative;
+  width: 960px;
+  height: 540px;
+  margin: 0 auto;
+}
+.d_top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 10px);
+  height: 50px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+#student_id {
+  color: black;
+  font-size: 14px;
+}
+#student_name {
+  color: black;
+  font-size: 14px;
+}
+.d_left,
+.d_right {
+  position: absolute;
+  top: 50px;
+  height: calc(100% - 50px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.d_left {
+  left: 0;
+  width: calc(25% - 5px);
+  background-color: yellow;
+}
+.d_left button {
+  width: 50%;
+  margin-bottom: 8px;
+  padding: 8px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.d_right {
+  right: 0;
+  width: calc(75% - 5px);
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.d_right img {
+  max-width: 100%;
+  height: auto;
+}
+.d_right-text {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  color: black;
+  margin-top: 20px;
+}
